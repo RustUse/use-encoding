@@ -1,0 +1,21 @@
+[package]
+name = "use-percent"
+description = "Percent-encoding and decoding helpers for RustUse"
+publish = true
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+keywords = ["percent", "encoding", "url", "escape"]
+categories = ["encoding", "text-processing"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[lints]
+workspace = true

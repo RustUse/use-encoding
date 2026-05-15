@@ -1,0 +1,75 @@
+[workspace]
+release = false
+release_always = false
+changelog_update = false
+pr_labels = ["release"]
+max_analyze_commits = 2000
+
+[[package]]
+name = "use-percent"
+release = true
+version_group = "rustuse-encoding"
+
+[[package]]
+name = "use-base64"
+release = true
+version_group = "rustuse-encoding"
+
+[[package]]
+name = "use-hex"
+release = true
+version_group = "rustuse-encoding"
+
+[[package]]
+name = "use-ascii"
+release = true
+version_group = "rustuse-encoding"
+
+[[package]]
+name = "use-utf8"
+release = true
+version_group = "rustuse-encoding"
+
+[[package]]
+name = "use-escape"
+release = true
+version_group = "rustuse-encoding"
+
+[[package]]
+name = "use-base32"
+release = true
+version_group = "rustuse-encoding"
+
+[[package]]
+name = "use-encoding"
+release = true
+version_group = "rustuse-encoding"
+changelog_update = true
+changelog_path = "./CHANGELOG.md"
+changelog_include = [
+  "use-percent",
+  "use-base64",
+  "use-hex",
+  "use-ascii",
+  "use-utf8",
+  "use-escape",
+  "use-base32",
+]
+
+[changelog]
+header = """# Changelog
+
+## Unreleased
+"""
+protect_breaking_commits = true
+sort_commits = "oldest"
+commit_parsers = [
+  { message = "^feat(?:\\([^)]+\\))?!?: .+", group = "Added" },
+  { message = "^fix(?:\\([^)]+\\))?!?: .+", group = "Fixed" },
+  { message = "^security(?:\\([^)]+\\))?!?: .+", group = "Security" },
+  { message = "^(?:refactor|perf|change)(?:\\([^)]+\\))?!?: .+", group = "Changed" },
+  { message = "^docs(?:\\([^)]+\\))?!?: .+", group = "Documentation" },
+  { message = "^(?:build|ci|chore|deps|test)(?:\\([^)]+\\))?!?: .+", group = "Tooling" },
+  { footer = "^changelog: ?ignore$", skip = true },
+  { message = "^.*", group = "Changed" },
+]

@@ -1,0 +1,51 @@
+[workspace]
+members = [
+    "crates/use-encoding",
+    "crates/use-percent",
+    "crates/use-base64",
+    "crates/use-hex",
+    "crates/use-ascii",
+    "crates/use-utf8",
+    "crates/use-escape",
+    "crates/use-base32",
+]
+resolver = "2"
+
+[workspace.package]
+authors = ["RustUse Contributors"]
+edition = "2024"
+homepage = "https://rustuse.org"
+license = "MIT OR Apache-2.0"
+documentation = "https://rustuse.org"
+publish = false
+readme = "README.md"
+repository = "https://github.com/RustUse/use-encoding"
+rust-version = "1.95.0"
+version = "0.1.0"
+
+[workspace.dependencies]
+use-ascii = { version = "0.1.0", path = "crates/use-ascii" }
+use-base32 = { version = "0.1.0", path = "crates/use-base32" }
+use-base64 = { version = "0.1.0", path = "crates/use-base64" }
+use-encoding = { version = "0.1.0", path = "crates/use-encoding" }
+use-escape = { version = "0.1.0", path = "crates/use-escape" }
+use-hex = { version = "0.1.0", path = "crates/use-hex" }
+use-percent = { version = "0.1.0", path = "crates/use-percent" }
+use-utf8 = { version = "0.1.0", path = "crates/use-utf8" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.metadata.rustuse.release]
+publish = false
+versioning = "lockstep-0.x"
+first-publish-candidates = [
+    "use-percent",
+    "use-base64",
+    "use-hex",
+    "use-ascii",
+    "use-utf8",
+    "use-escape",
+    "use-base32",
+    "use-encoding",
+]

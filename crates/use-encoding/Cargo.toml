@@ -1,0 +1,41 @@
+[package]
+name = "use-encoding"
+description = "Feature-gated facade crate for RustUse encoding helpers"
+publish = true
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+keywords = ["encoding", "base64", "hex", "utf8", "percent"]
+categories = ["encoding", "text-processing"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+default = []
+percent = ["dep:use-percent"]
+base64 = ["dep:use-base64"]
+hex = ["dep:use-hex"]
+ascii = ["dep:use-ascii"]
+utf8 = ["dep:use-utf8"]
+escape = ["dep:use-escape"]
+base32 = ["dep:use-base32"]
+full = ["percent", "base64", "hex", "ascii", "utf8", "escape", "base32"]
+
+[dependencies]
+use-ascii = { workspace = true, optional = true }
+use-base32 = { workspace = true, optional = true }
+use-base64 = { workspace = true, optional = true }
+use-escape = { workspace = true, optional = true }
+use-hex = { workspace = true, optional = true }
+use-percent = { workspace = true, optional = true }
+use-utf8 = { workspace = true, optional = true }
+
+[lints]
+workspace = true
