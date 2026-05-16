@@ -10,14 +10,14 @@ on:
                 type: choice
                 options:
                     - all
-                  - use-percent
-                  - use-base64
-                  - use-hex
-                  - use-ascii
-                  - use-utf8
-                  - use-escape
-                  - use-base32
-                  - use-encoding
+                    - use-percent
+                    - use-base64
+                    - use-hex
+                    - use-ascii
+                    - use-utf8
+                    - use-escape
+                    - use-base32
+                    - use-encoding
             dry_run:
                 description: Run cargo publish in dry-run mode.
                 required: true
